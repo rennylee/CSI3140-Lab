@@ -1,0 +1,12 @@
+button {
+    border: 2px;
+    color: green;
+    background-color: aqua;
+    padding: 16px;
+}
+
+button :hover{
+    color: yellow;
+    background-color: brown;
+    padding: 16px;
+}
