@@ -1,9 +1,0 @@
-.gradient-div {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle at bottom left, red, green, blue);
-
-    background: -moz-radial-gradient(circle at bottom left, red, green, blue);
-
-    background: -webkit-radial-gradient(circle at bottom left, red, green, blue);
-}

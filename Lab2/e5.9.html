@@ -2,29 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Graphics.html</title>
         <style type = "text/css">
-        @-webkit-keyframes anim { 0% {left :0px; top: 0px;} 
-        25% {left :500px; top: 0px;} 
-        50% {left :500px; top: 500px;} 
+       
+        @keyframes anim{ 
+        0% {left :0px; top: 0px;}
+        25% {left :500px; top: 0px;}
+        50% {left :500px; top: 500px;}
         75% {left :0px; top: 500px;}
         100% {left: 0px; top: 0px;} }
-        @keyframes anim{ 0% {left :0px; top: 0px;}
-        25% {left :100px; top: 0px;}
-        50% {left :100px; top: 100px;}
-        75% {left :0px; top: 100px;}
-        100% {left: 0px; top: 0px;} }
-        @-moz-keyframes anim { 0% {left :0px; top: 0px;} 
-        25% {left :100px; top: 0px;} 
-        50% {left :100px; top: 100px;} 
-        75% {left :0px; top: 100px;} 
-        100% {left: 0px; top: 0px;} } 
-        @-o-keyframes anim { 0% {left :0px; top: 0px;} 
-        25% {left :500px; top: 0px;} 
-        50% {left :500px; top: 500px;} 
-        75% {left :0px; top: 500px;} 
-        100% {left: 0px; top: 0px;} } 
-        #box { position: absolute; border: 2px solid yellow; -moz-animation: anim 1s linear infinite; -o-animation: anim 1s linear infinite; animation:  anim 1s linear infinite; }
+    
+        #box { position: absolute; border: 5px solid yellow; -moz-animation: anim 4s linear infinite; -o-animation: anim 3s linear infinite; animation:  anim 4s linear infinite; }
         </style>
     </head>
     <body>
