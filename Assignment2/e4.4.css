@@ -1,0 +1,10 @@
+body {
+    background-image: url('roll.jpg');
+    background-position: center 50%;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-size: 40%; 
+    margin: 0;
+    padding: 0;
+  }
+  
