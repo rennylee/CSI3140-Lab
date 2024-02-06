@@ -19,6 +19,6 @@ for (var k=0; k<size; k++) {
     }
 }
 
-console.log("Five Integers are: "+numbers)
-console.log("Largest integer is: "+largest);
-console.log("Smallest Integer is: "+smallest);
+console.log("Five Integers are: "+ numbers);
+console.log("Largest integer is: "+ largest);
+console.log("Smallest Integer is: "+ smallest);
