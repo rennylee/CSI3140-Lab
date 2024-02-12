@@ -1,6 +1,0 @@
-a. missing {} for if statement, shouldn't have semi coloum after if statement, missing {} for else statement.
-b. The variable total is not initialized, causing an undefined value issue. should separate x and total for initialized.
-c. "While" should be "while". missing {} for while loop, and the increment should be inside the loop block.
-d. "++y" should be "--y". otherwise it's a infinte loop.
-
-
