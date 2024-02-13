@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            const articles = ["the", "a", "one", "some", "any"];
+            const nouns = ["boy", "girl", "dog", "town", "car"];
+            const verbs = ["drove", "jumped", "ran", "walked", "skipped"];
+            const prepositions = ["to", "from", "over", "under", "on"];
+            
+            function sentencesGener() {
+                var a1 = String(articles[(Math.floor(Math.random() * articles.length))]);
+                var n1 = nouns[(Math.floor(Math.random() * nouns.length))];
+                var v1 = verbs[(Math.floor(Math.random() * verbs.length))]; 
+                var p1 = prepositions[(Math.floor(Math.random() * prepositions.length))];
+                var a2 = articles[(Math.floor(Math.random() * articles.length))];
+                var n2 = nouns[(Math.floor(Math.random() * nouns.length))];
+
+                var sen = a1 + " " + n1 + " " + v1 + " " + p1 + " " + a2 + " " + n2 + ". ";
+                var fixSen = sen.charAt(0).toUpperCase() + sen.slice(1);
+                
+                document.write(fixSen);
+            }
+            document.write("Once upon a time...");
+
+            for (let i = 0; i<20; i++) {
+                sentencesGener();
+            }
+
+            document.write("THE END");
+        </script>
+    </body>
+</html>
