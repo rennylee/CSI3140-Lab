@@ -1,0 +1,5 @@
+.grad-div {
+    width: 500px;
+    height: 500px;
+    background-image: radial-gradient(circle at bottom left, red, green, blue);
+}
