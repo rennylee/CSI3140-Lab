@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Calculating Circle Area</title>
+        <script>
+            function start() 
+            {
+                var button = document.getElementById( "calculateButton" );
+                button.addEventListener( "click", displayArea, false ); 
+            } // end function start
+            function displayArea() 
+            {
+                var inputField = document.getElementById( "radiusField" );
+                var radius = parseFloat( inputField.value );
+                var result = document.getElementById( "result" ); 
+                result.innerHTML = "Circle Area is: " + circleArea( radius );
+            } 
+            function circleArea( radius ) 
+            {
+                return Math.PI * Math.pow(radius, 2); 
+            } 
+            window.addEventListener( "load", start, false ); 
+        </script>
+    </head>
+    <body>
+        <form action = "#"> 
+            <p><label>Radius:
+                <input id = "radiusField" type = "number"></label>
+                <input id = "calculateButton" type = "button" value = "Calculate"></p> 
+        </form>
+        <p id = "result"></p> 
+    </body>
+</html>

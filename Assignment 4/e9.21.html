@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var headsCount = 0;
+            var tailsCount = 0;
+
+            function start() {
+                var tossButton = document.getElementById("tossButton");
+                tossButton.addEventListener("click", tossCoin, false);
+            }
+
+            function tossCoin() {
+                var result = flip() ? "Heads" : "Tails";
+                if (result === "Heads") {
+                    headsCount++;
+                } else {
+                    tailsCount++;
+                }
+                updateDisplay();
+            }
+
+            function flip() {
+                return Math.random() < 0.5; 
+            }
+
+            function updateDisplay() {
+                document.getElementById("headsCount").textContent = "Heads: " + headsCount;
+                document.getElementById("tailsCount").textContent = "Tails: " + tailsCount;
+            }
+
+            window.addEventListener("load", start, false);
+        </script>
+    </head>
+    <body>
+        <button id="tossButton">Toss Coin</button>
+        <div id="results">
+            <p id="headsCount">Heads: 0</p>
+            <p id="tailsCount">Tails: 0</p>
+        </div>
+    </body>
+</html>
