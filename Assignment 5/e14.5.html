@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+    
+        context.shadowOffsetX = 2; 
+        context.shadowOffsetY = 5;
+        context.shadowBlur = 6;    
+        context.shadowColor = "gray"; 
+    
+        context.font = "30px Arial";
+    
+        context.fillText("HTML5 Canvas", 50, 50);
+    </script>
+</body>
+</html>
