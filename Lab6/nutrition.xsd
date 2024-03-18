@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="nutrition">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="ProductType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ProductType">
+        <xs:sequence>
+            <xs:element name="servingSize" type="xs:string"/>
+            <xs:element name="calories" type="CaloriesType"/>
+            <xs:element name="fat" type="FatType"/>
+            <xs:element name="cholesterol" type="xs:decimal"/>
+            <xs:element name="sodium" type="xs:decimal"/>
+            <xs:element name="carbohydrates" type="CarbohydratesType"/>
+            <xs:element name="protein" type="xs:decimal"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="CaloriesType">
+        <xs:attribute name="total" type="xs:decimal" use="required"/>
+        <xs:attribute name="fromFat" type="xs:decimal" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FatType">
+        <xs:sequence>
+            <xs:element name="saturatedGrams" type="xs:decimal"/>
+        </xs:sequence>
+        <xs:attribute name="totalGrams" type="xs:decimal" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="CarbohydratesType">
+        <xs:sequence>
+            <xs:element name="fiberGrams" type="xs:decimal"/>
+            <xs:element name="sugarGrams" type="xs:decimal"/>
+        </xs:sequence>
+        <xs:attribute name="totalGrams" type="xs:decimal" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
