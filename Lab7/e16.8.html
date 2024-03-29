@@ -11,12 +11,12 @@
             border-collapse: collapse;
         }
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid black;
             padding: 8px;
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: blueviolet;
         }
         .product-image {
             width: 100px;
@@ -26,14 +26,14 @@
             margin: 20px auto;
             width: 80%;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid black;
             display: none; 
         }
         #large-image {
             position: absolute;
-            border: 1px solid #ddd;
+            border: 1px solid black;
             display: none;
-            background-color: #fff;
+            background-color: black;
             padding: 5px;
             z-index: 100;
         }
@@ -46,7 +46,7 @@
                 <th>Product</th>
                 <th>Price</th>
                 <th>Thumbnail</th>
-                <th>Action</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
@@ -58,8 +58,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const tableBody = document.querySelector('#product-table tbody');
             const descriptionDisplay = document.getElementById('description-display');
-            const largeImageDiv = document.getElementById('large-image');
-
+    
             function loadProductSummary() {
                 fetch('summary.json')
                     .then(response => response.json())
@@ -69,28 +68,27 @@
                             row.innerHTML = `
                                 <td>${product.title}</td>
                                 <td>$${product.price}</td>
-                                <td><img src="${product.thumbnail}" alt="${product.title}" class="product-image"></td>
+                                <td><img src="${product.thumbnail}" alt="${product.title}" class="product-image" data-original-thumbnail="${product.thumbnail}"></td>
                                 <td><button onclick="showDescription('${product.id}')">Show Description</button></td>
                             `;
-
+    
                             const thumbnail = row.querySelector('.product-image');
                             thumbnail.addEventListener('mouseenter', () => {
                                 fetch('image.json')
                                     .then(response => response.json())
                                     .then(images => {
                                         const productImage = images.find(img => img.id === product.id).image;
-                                        largeImageDiv.innerHTML = `<img src="${productImage}" alt="${product.title}" style="width:200px;">`;
-                                        largeImageDiv.style.display = 'block';
+                                        thumbnail.src = productImage; 
                                     });
                             });
-
+    
                             thumbnail.addEventListener('mouseleave', () => {
-                                largeImageDiv.style.display = 'none';
+                                thumbnail.src = thumbnail.getAttribute('data-original-thumbnail'); 
                             });
                         });
                     });
             }
-
+    
             window.showDescription = function(id) {
                 fetch('description.json')
                     .then(response => response.json())
@@ -100,9 +98,10 @@
                         descriptionDisplay.style.display = 'block'; 
                     });
             }
-
+    
             loadProductSummary();
         });
     </script>
+    
 </body>
 </html>
