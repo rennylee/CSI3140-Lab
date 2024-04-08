@@ -31,7 +31,7 @@ foreach ($states as $state) {
 }
 //e)
 foreach ($states as $state) {
-    if (preg_match('/^M/',($state))) {
+    if (preg_match('/^M\w*/',($state))) {
         $statesArray[4] = ($state);
     }
 }
@@ -41,3 +41,4 @@ var_dump($statesArray);
 
 
 ?>
+
