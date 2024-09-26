@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="700" height="700"></canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var content = canvas.getContext('2d');
+        
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var initialRadius = 100;
+        var radiusIncrement = 5;
+        var numCircles = 8;
+        var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'gray', 'black'];
+
+        for (var i = 0; i < numCircles; i++) {
+            content.beginPath();
+            content.arc(centerX, centerY, initialRadius + i * radiusIncrement, 0, 2 * Math.PI);
+            content.strokeStyle = colors[i];
+            content.stroke();
+        }
+    </script>
+</body>
+</html>

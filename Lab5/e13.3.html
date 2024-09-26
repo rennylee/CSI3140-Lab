@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <title> Exercise 13.3 </title>
+    <style>
+        #canvas { 
+            width: 800px;
+            border: 5px solid #999999;
+            border-collapse: collapse; 
+        }  
+        td { 
+            width: 4px; 
+            height: 4px; 
+            margin: 0px; 
+            padding: 0px; 
+        }
+        .red { 
+            background-color: red; 
+        }
+        .blue {
+            background-color: blue; 
+        }
+        .white { 
+            background-color: white; 
+        }
+    </style>
+    <script type="text/javascript">
+        function createCanvas(){
+            var side = 100;
+            var tbody = document.getElementById("tablebody");
+            for(var i=0; i< side; ++i){
+                var row = document.createElement("tr");
+                for(var j=0; j < side; ++j){
+                    var cell=document.createElement("td");
+                    row.appendChild(cell);
+                } 
+                tbody.appendChild(row);
+            }
+ 
+            document.getElementById("canvas").addEventListener("mousemove", processMouseMove, false);
+    
+            document.getElementById("btnClear").addEventListener("click", erase, false);
+        }
+        
+        //process the onmousemove event
+        function processMouseMove(e){
+            if(e.target.tagName.toLowerCase() == "td" ){
+            
+                if(e.ctrlKey){
+                    e.target.setAttribute("class", "blue");
+                }
+                if(e.shiftKey){
+                    e.target.setAttribute("class", "red");
+                }
+                if (e.altKey) {
+                    e.target.setAttribute("class", "white");
+                } 
+            }
+        }
+        window.addEventListener("load",createCanvas,false);
+        
+    </script>
+</head>
+    <body>
+        <h1> Exercise 13.3 </h1>
+        <table id="canvas">
+        <caption>Hold <em>Ctrl</em> (or <em>Control</em>) to draw blue.
+        Hold <em>Shift</em> to draw red. Hold <em>Alt</em> to erase.</caption>
+        <tbody id="tablebody"></tbody>
+        </table>
+    </body>
+</html>

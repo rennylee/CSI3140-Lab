@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 2px solid black; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var content = canvas.getContext('2d');
+        var radius = 20; 
+        var positions = [
+            { x: canvas.width / 2, y: canvas.height - radius }, 
+            { x: canvas.width - radius, y: canvas.height / 2 }, 
+            { x: canvas.width / 2, y: radius }, 
+            { x: radius, y: canvas.height / 2 } 
+        ];
+        var currentPos = 0;
+        var nextPos = (currentPos + 1) % positions.length;
+        var speed = 0.007; 
+        var t = 0; 
+
+        function drawCircle() {
+            var posX = (1 - t) * positions[currentPos].x + t * positions[nextPos].x;
+            var posY = (1 - t) * positions[currentPos].y + t * positions[nextPos].y;
+            content.clearRect(0, 0, canvas.width, canvas.height); 
+            content.beginPath();
+            content.arc(posX, posY, radius, 0, 2 * Math.PI);
+            content.fillStyle = 'purple';
+            content.fill();
+
+            t += speed;
+            if (t >= 1) {
+                t = 0;
+                currentPos = nextPos;
+                nextPos = (currentPos + 1) % positions.length;
+            }
+            requestAnimationFrame(drawCircle); 
+        }
+
+        drawCircle(); 
+    </script>
+</body>
+</html>

@@ -8,55 +8,48 @@
          <section id = "1">
         
             <p>
-               The <strong>color</strong> input type (Fig. 3.1; lines 20&ndash;21)
-               enables the user to enter a color. Opera displays a
-               color picker control that shows the default color
-               (black) with a down arrow that, when clicked, shows a
-               drop-down with 20 basic colors (Fig. 3.2). The user can
-               select a color or click the Other... button to select
-               from additional basic colors or create a custom color.
-               At the time of this writing, most browsers render the
-               color input type as a text field in which the user can
-               enter a hexidecimal code.
+               The <strong>color input type</strong> (Fig. 3.1, lines 20&ndash;21)
+               enables the user to enter a color. At the time of this writing, most browsers render the <span style="font-family: 'Times New Roman', sans-serif;">color input</span> type as a text field in which the user can enter a hexadecimal
+               code or a code name. In the future, when you click a <span style="font-family: 'Times New Roman', sans-serif;">color input</span>, browsers will likly dispaly a <i>color picker</i> similiar to the Microsoft Windows color dialog shown in Fig. 3.2.
             </p>
          </section>
    
          <section id = "2">
-            <em><strong>autofocus</strong> Attribute</em>
+            <em><strong>autofocus <span style="font-family: 'Times New Roman', sans-serif;">Attribute</span></strong></em>
             <p>
-               The <strong>autofocus</strong> attribute (Fig. 3.1; line 20)&mdash;an
-               optional attribute that can be used in only one input
+               The <strong>autofocus attribute</strong> (Fig. 3.1, line 20)&mdash;an
+               optional attribute that can be used in only one <span style="font-family: 'Times New Roman', sans-serif;">input</span> 
                element on a form&mdash;automatically gives the focus
-               to the input element, allowing the user to begin typing
-               in that element immediately. Figure 3.3 shows autofocus on
-               the color element&mdash;the first input element in our
+               to the <span style="font-family: 'Times New Roman', sans-serif;">input</span> element, allowing the user to begin typing
+               in that element immediately. Figure 3.3 shows <span style="font-family: 'Roboto', sans-serif;">autofocus</span> on
+               the <span style="font-family: 'Times New Roman', sans-serif;">color</span> element&mdash;the first <span style="font-family: 'Times New Roman', sans-serif;">input</span> element in our
                form&mdash;as rendered in Chrome. You do not need to
                include autofocus in your forms.
             </p>
          </section>
    
          <section id = "3">
-            <em>Validation</em>
+            <strong><em>Validation</em></strong>
             <p>
                Traditionally it's been difficult to validate user
                input, such as ensuring that an e-mail address, URL,
                date or time is entered in the proper format. The new
-               HTML 5 input types are self validating on the client
+               HTML 5 input types are <i>self validating</i> on the client
                side, eliminating the need to add complicated
                JavaScript code to your web pages to validate user
                input, reducing the amount of invalid data submitted
                and consequently reducing Internet traffic between the
-               server and the client to correct invalid input.
+               server and the client to correct invalid input.<i>The server should still validate all user input.</i>
                When a user enters data into a form then submits the
-               form (in this example, by clicking the Submit button),
+               form (in this example, by clicking the <b><span style="font-family: 'Times New Roman', sans-serif;">Submit</span></b> button),
                the browser immediately checks the self-validating
                elements to ensure that the data is correct. For
                example, if a user enters an incorrect hexadecimal
-               color value when using a browser that renders the color
+               color value when using a browser that renders the <span style="font-family: 'Times New Roman', sans-serif;">color</span>
                elements as a text field (e.g., Chrome), a callout
                pointing to the element will appear, indicating that an
                invalid value was entered (Fig. 3.4). Figure 3.5 lists
-               each of the new HTML5 input types and provides examples
+               each of the new HTML5 <span style="font-family: 'Times New Roman', sans-serif;">input</span> types and provides examples
                of the proper formats required for each type of data to be valid.
             </p>
          </section>

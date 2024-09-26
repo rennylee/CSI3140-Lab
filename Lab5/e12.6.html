@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body id="text" style="background-color:darkcyan">
+        <h1>Testing 123</h1>
+        <button onclick="changeColor1()">Change background color to blue</button>
+        <br>
+        <button onclick="changeColor2()">Change background color to red</button>
+        <br>
+        <button onclick="changeFont1()">Change font style to Serif</button>
+        <br>
+        <button onclick="changeFont2()">Change font style to Sans Serif</button>
+        <script>
+            function changeColor1(){
+                document.body.style.backgroundColor = "Blue";
+            }
+            function changeColor2(){
+                document.body.style.backgroundColor = "Red";
+            }
+            function changeFont1(){
+                document.getElementById('text').style.fontFamily = "Serif";
+            }
+            function changeFont2(){
+                document.getElementById('text').style.fontFamily = "sans-serif";
+            }
+
+        </script>
+    </body>
+</html>

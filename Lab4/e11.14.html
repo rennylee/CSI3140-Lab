@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* CSS Style for textarea */
+            textarea {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                resize: vertical;
+                min-height: 400px;
+                width: 75%;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Find ur letter</h1>
+        <label>Enter input:</label>
+        <input type="text" name="userInput" id="userInput" placeholder="userInput"/>
+        <br>
+        <input type="button" name="submit" id="btn_sub" value="SUBMIT" onclick="searchKey()"/>
+        <h1>Result</h1>
+        <textarea row="auto" cols="200" name="result" id="result"></textarea>
+        <script>
+            function searchKey(){
+                var userInput = document.getElementById("userInput").value;
+                var alphabets = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+                var inputLower = userInput.toLowerCase();
+                var len = inputLower.length;
+                document.getElementById("result").value="";
+
+                for (let i=0; i<26; i++) {
+                    var occurences = 0;
+                    var searchKey = inputLower.indexOf(alphabets[i]);
+
+                    for (let j =0; j<len;j++) {
+                        if (searchKey !== -1) {
+                            occurences++
+                            var searchKey = inputLower.indexOf(alphabets[i], searchKey + 1);
+                        }    
+                    }
+
+                    if (occurences!==0) {
+                        document.getElementById("result").value = document.getElementById("result").value + "\n" + alphabets[i] +" Occurs " + occurences + " times.";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html> 
